@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="ElevatePage menyediakan jasa pembuatan landing page profesional, modern, dan responsif untuk bisnis Anda. Promo launching Rp75.000.">
+  <title>ElevatePage — Landing Page Profesional untuk Bisnis Anda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #111111;
+      --black-soft: #191919;
+      --white: #ffffff;
+      --gray-50: #fafafa;
+      --gray-100: #f3f3f3;
+      --gray-200: #e7e7e7;
+      --gray-500: #777777;
+      --gray-700: #444444;
+      --radius: 22px;
+      --shadow: 0 18px 55px rgba(0, 0, 0, .10);
+      --container: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--white);
+      font-family: "Inter", Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(var(--container), calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: var(--gray-500); font-size: .76rem; font-weight: 800;
+      letter-spacing: .17em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 25px; height: 2px; background: currentColor; }
+    .section { padding: 100px 0; }
+    .section-heading { max-width: 680px; margin: 0 auto 46px; text-align: center; }
+    .section-heading h2 {
+      margin: 13px 0 12px; font: 800 clamp(2rem, 4vw, 3rem)/1.13 "Poppins", sans-serif;
+      letter-spacing: -.055em;
+    }
+    .section-heading p { margin: 0; color: var(--gray-500); font-size: 1.02rem; }
+    .btn {
+      min-height: 56px; display: inline-flex; align-items: center; justify-content: center;
+      gap: 11px; padding: 15px 25px; border-radius: 999px; border: 1px solid transparent;
+      background: var(--white); color: var(--black); font-weight: 800;
+      box-shadow: 0 12px 30px rgba(255,255,255,.12); transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 16px 35px rgba(255,255,255,.2); }
+    .btn svg { width: 21px; height: 21px; flex: 0 0 auto; }
+
+    /* Header */
+    .site-header {
+      position: absolute; inset: 0 0 auto; z-index: 20; color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font: 800 1.18rem "Poppins", sans-serif; letter-spacing: -.04em; }
+    .brand-mark {
+      width: 35px; height: 35px; display: grid; place-items: center;
+      border: 2px solid rgba(255,255,255,.9); border-radius: 11px;
+      font: 800 1.1rem "Poppins", sans-serif; transform: skew(-8deg);
+    }
+    .nav-links { display: flex; align-items: center; gap: 30px; color: rgba(255,255,255,.82); font-size: .88rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-note { color: rgba(255,255,255,.65); font-size: .78rem; }
+
+    /* Hero */
+    .hero {
+      position: relative; min-height: 690px; display: flex; align-items: center;
+      padding: 135px 0 105px; overflow: hidden; color: var(--white);
+      background:
+        radial-gradient(ellipse at 78% 45%, rgba(255,255,255,.17), transparent 34%),
+        radial-gradient(ellipse at 100% 0%, rgba(120,120,120,.20), transparent 35%),
+        linear-gradient(115deg, #090909 0%, #171717 58%, #303030 100%);
+    }
+    .hero::before {
+      content: ""; position: absolute; width: 640px; height: 640px; right: -180px; top: -300px;
+      border: 1px solid rgba(255,255,255,.16); border-radius: 50%;
+      box-shadow: 0 0 0 55px rgba(255,255,255,.025), 0 0 0 110px rgba(255,255,255,.018);
+    }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .94fr 1.06fr; align-items: center; gap: 35px; }
+    .hero-copy { max-width: 590px; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 9px; padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,.34); border-radius: 999px;
+      color: rgba(255,255,255,.88); font-size: .78rem; font-weight: 700; margin-bottom: 22px;
+      background: rgba(255,255,255,.06);
+    }
+    .hero-tag span { width: 7px; height: 7px; background: #fff; border-radius: 50%; }
+    h1 { margin: 0; font: 800 clamp(2.45rem, 5.3vw, 4.65rem)/1.04 "Poppins", sans-serif; letter-spacing: -.065em; }
+    .hero-copy > p { max-width: 520px; margin: 23px 0 28px; color: rgba(255,255,255,.74); font-size: 1.05rem; line-height: 1.8; }
+    .hero-meta { margin-top: 17px; color: rgba(255,255,255,.56); font-size: .78rem; }
+
+    /* Device mockup */
+    .device-stage { position: relative; min-height: 420px; display: flex; align-items: center; justify-content: center; }
+    .device-glow {
+      position: absolute; width: 75%; height: 65%; border-radius: 50%;
+      background: rgba(255,255,255,.12); filter: blur(70px);
+    }
+    .laptop { position: relative; width: min(100%, 570px); z-index: 1; transform: perspective(1100px) rotateY(-8deg) rotateX(2deg); }
+    .laptop-screen {
+      position: relative; aspect-ratio: 1.55; padding: 12px; overflow: hidden;
+      border: 8px solid #282828; border-bottom-width: 14px; border-radius: 17px 17px 8px 8px;
+      background: #111; box-shadow: 0 30px 65px rgba(0,0,0,.48);
+    }
+    .screen-content {
+      position: relative; height: 100%; overflow: hidden; border-radius: 5px;
+      background: linear-gradient(90deg, rgba(0,0,0,.76), rgba(0,0,0,.08)), url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85") center/cover;
+      display: flex; flex-direction: column; justify-content: center; padding: 8%;
+    }
+    .screen-nav { position: absolute; inset: 13px 18px auto; display: flex; justify-content: space-between; color: white; font-size: 8px; font-weight: 700; }
+    .screen-content small { color: rgba(255,255,255,.75); font-size: clamp(7px, .8vw, 11px); letter-spacing: .12em; text-transform: uppercase; }
+    .screen-content strong { max-width: 65%; margin-top: 9px; color: white; font: 800 clamp(17px, 2.4vw, 31px)/1.1 "Poppins", sans-serif; letter-spacing: -.05em; }
+    .screen-content em { margin-top: 10px; color: rgba(255,255,255,.75); font-size: clamp(7px, .75vw, 10px); font-style: normal; }
+    .screen-pill { width: 86px; margin-top: 14px; padding: 6px 9px; border-radius: 20px; background: white; color: #111; font-size: 7px; font-weight: 800; text-align: center; }
+    .laptop-base {
+      width: 110%; height: 15px; margin-left: -5%; border-radius: 0 0 22px 22px;
+      background: linear-gradient(#c9c9c9, #777 45%, #333 70%); box-shadow: 0 19px 24px rgba(0,0,0,.36);
+    }
+    .phone {
+      position: absolute; z-index: 3; width: 128px; right: -4px; bottom: 0;
+      padding: 8px; border: 5px solid #292929; border-radius: 25px; background: #080808;
+      box-shadow: 0 22px 42px rgba(0,0,0,.5); transform: rotate(5deg);
+    }
+    .phone-screen {
+      position: relative; min-height: 225px; overflow: hidden; border-radius: 15px;
+      background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.8)), url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80") center/cover;
+      padding: 42px 10px 12px; color: white;
+    }
+    .phone-screen::before { content: ""; position: absolute; width: 48px; height: 7px; top: 12px; left: 50%; transform: translateX(-50%); border-radius: 8px; background: #171717; }
+    .phone-screen b { display: block; font: 800 17px/1.1 "Poppins", sans-serif; }
+    .phone-screen small { display: block; margin-top: 9px; color: rgba(255,255,255,.75); font-size: 8px; }
+    .phone-screen span { display: inline-block; margin-top: 13px; padding: 5px 8px; background: white; color: #111; border-radius: 20px; font-size: 7px; font-weight: 800; }
+
+    /* Problem and solution */
+    .problem { background: var(--gray-100); }
+    .problem-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 65px; align-items: center; }
+    .problem h2, .solution h2 { margin: 13px 0 15px; font: 800 clamp(1.9rem, 3.5vw, 2.8rem)/1.16 "Poppins", sans-serif; letter-spacing: -.05em; }
+    .problem p, .solution p { color: var(--gray-500); margin: 0; }
+    .problem-card {
+      padding: 32px; border: 1px solid #e4e4e4; border-radius: var(--radius);
+      background: rgba(255,255,255,.78); box-shadow: 0 15px 40px rgba(0,0,0,.035);
+    }
+    .problem-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .problem-item { display: flex; gap: 13px; align-items: flex-start; color: var(--gray-700); font-size: .92rem; }
+    .problem-item i { flex: 0 0 28px; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: #ededed; color: #111; font-style: normal; font-weight: 800; }
+    .solution { background: white; }
+    .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; align-items: center; }
+    .solution-image { min-height: 330px; border-radius: 26px; overflow: hidden; box-shadow: var(--shadow); }
+    .solution-image img { width: 100%; height: 100%; min-height: 330px; object-fit: cover; }
+    .solution-points { display: grid; gap: 13px; margin-top: 24px; }
+    .solution-points div { display: flex; gap: 12px; align-items: center; font-weight: 700; font-size: .93rem; }
+    .check { width: 24px; height: 24px; display: grid; place-items: center; flex: 0 0 24px; border-radius: 50%; background: #111; color: white; font-size: .75rem; }
+
+    /* Features */
+    .features { background: var(--gray-50); }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .feature-card { padding: 30px 27px; border: 1px solid var(--gray-200); border-radius: var(--radius); background: white; transition: transform .2s, box-shadow .2s; }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .feature-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 16px; background: var(--black); color: white; font-size: 1.25rem; font-weight: 800; }
+    .feature-card h3 { margin: 20px 0 8px; font: 700 1.1rem "Poppins", sans-serif; letter-spacing: -.025em; }
+    .feature-card p { margin: 0; color: var(--gray-500); font-size: .91rem; }
+
+    /* Portfolio */
+    .portfolio { background: white; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .portfolio-card { overflow: hidden; border: 1px solid var(--gray-200); border-radius: 20px; background: white; box-shadow: 0 12px 32px rgba(0,0,0,.055); }
+    .portfolio-image { position: relative; height: 245px; overflow: hidden; background: #eee; }
+    .portfolio-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .portfolio-card:hover .portfolio-image img { transform: scale(1.055); }
+    .portfolio-label { position: absolute; left: 15px; top: 15px; padding: 7px 11px; border-radius: 999px; background: rgba(255,255,255,.94); color: #111; font-size: .68rem; font-weight: 800; }
+    .portfolio-copy { padding: 21px; }
+    .portfolio-copy h3 { margin: 0 0 7px; font: 700 1.05rem "Poppins", sans-serif; }
+    .portfolio-copy p { margin: 0; color: var(--gray-500); font-size: .86rem; }
+    .demo-note { margin: 22px auto 0; max-width: 760px; color: var(--gray-500); text-align: center; font-size: .8rem; }
+
+    /* Pricing */
+    .pricing-wrap { padding: 0 0 100px; background: white; }
+    .pricing {
+      position: relative; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 35px;
+      overflow: hidden; padding: 48px 55px; border-radius: 28px; color: white;
+      background: radial-gradient(circle at 100% 0%, #444 0, transparent 38%), linear-gradient(115deg, #0b0b0b, #242424);
+    }
+    .pricing::after { content: ""; position: absolute; width: 250px; height: 250px; right: 20%; bottom: -210px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; box-shadow: 0 0 0 35px rgba(255,255,255,.025); }
+    .promo-tag { display: inline-block; padding: 8px 13px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; font-size: .75rem; font-weight: 800; letter-spacing: .08em; }
+    .pricing h2 { margin: 17px 0 8px; font: 800 clamp(1.8rem, 3vw, 2.7rem)/1.12 "Poppins", sans-serif; letter-spacing: -.05em; }
+    .pricing p { margin: 0; color: rgba(255,255,255,.7); }
+    .price-box { position: relative; z-index: 1; min-width: 275px; padding-left: 38px; border-left: 1px solid rgba(255,255,255,.25); }
+    .old-price { color: rgba(255,255,255,.55); text-decoration: line-through; font-size: 1.2rem; font-weight: 700; }
+    .new-price { margin-top: 2px; font: 800 clamp(2.7rem, 5vw, 4.3rem)/1.1 "Poppins", sans-serif; letter-spacing: -.07em; white-space: nowrap; }
+    .saving { margin-top: 8px; color: rgba(255,255,255,.75); font-size: .82rem; font-weight: 700; }
+
+    /* Process and FAQ */
+    .details { background: var(--gray-100); }
+    .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .details h2 { margin: 12px 0 25px; font: 800 2rem/1.15 "Poppins", sans-serif; letter-spacing: -.05em; }
+    .steps { display: grid; gap: 20px; }
+    .step { display: flex; gap: 15px; align-items: flex-start; }
+    .step-number { width: 36px; height: 36px; flex: 0 0 36px; display: grid; place-items: center; border-radius: 50%; background: #111; color: white; font-weight: 800; }
+    .step h3 { margin: 0 0 3px; font-size: .98rem; }
+    .step p { margin: 0; color: var(--gray-500); font-size: .87rem; }
+    .faq-list { display: grid; gap: 10px; }
+    .faq-item { overflow: hidden; border: 1px solid #e2e2e2; border-radius: 14px; background: white; }
+    .faq-question {
+      width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 15px;
+      padding: 17px 19px; border: 0; background: transparent; color: #111; text-align: left;
+      font-weight: 700; cursor: pointer;
+    }
+    .faq-question span:last-child { font-size: 1.25rem; transition: transform .2s; }
+    .faq-answer { display: none; padding: 0 19px 18px; color: var(--gray-500); font-size: .9rem; }
+    .faq-item.active .faq-answer { display: block; }
+    .faq-item.active .faq-question span:last-child { transform: rotate(45deg); }
+
+    /* Final CTA and footer */
+    .closing { padding: 80px 0; text-align: center; background: white; }
+    .closing h2 { max-width: 720px; margin: 12px auto; font: 800 clamp(2rem, 4vw, 3rem)/1.12 "Poppins", sans-serif; letter-spacing: -.055em; }
+    .closing p { max-width: 610px; margin: 0 auto; color: var(--gray-500); }
+    .closing-note { margin-top: 18px !important; font-size: .82rem; }
+    footer { padding: 42px 0 25px; background: #101010; color: white; }
+    .footer-main { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding-bottom: 30px; }
+    .footer-brand p { margin: 7px 0 0; color: rgba(255,255,255,.55); font-size: .8rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; color: rgba(255,255,255,.75); font-size: .86rem; }
+    .footer-links a:hover { color: white; }
+    .copyright { padding-top: 20px; border-top: 1px solid rgba(255,255,255,.13); color: rgba(255,255,255,.48); font-size: .76rem; text-align: center; }
+
+    @media (max-width: 900px) {
+      .hero { min-height: auto; }
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero-copy { max-width: 720px; }
+      .device-stage { width: min(100%, 650px); margin: 0 auto; min-height: 380px; }
+      .phone { right: 3%; }
+      .problem-grid, .solution-grid { grid-template-columns: 1fr; gap: 30px; }
+      .problem-list { grid-template-columns: 1fr 1fr; }
+      .solution-image { order: 2; }
+      .pricing { padding: 40px; }
+      .details-grid { gap: 35px; }
+    }
+    @media (max-width: 650px) {
+      .container { width: min(100% - 34px, var(--container)); }
+      .section { padding: 72px 0; }
+      .section-heading { margin-bottom: 32px; }
+      .nav { min-height: 70px; }
+      .brand { font-size: 1.05rem; }
+      .brand-mark { width: 31px; height: 31px; }
+      .nav-links { gap: 14px; font-size: .73rem; }
+      .nav-note { display: none; }
+      .hero { padding: 118px 0 65px; }
+      h1 { font-size: clamp(2.35rem, 11vw, 3.5rem); }
+      .hero-copy > p { font-size: .94rem; margin: 17px 0 22px; }
+      .hero-tag { font-size: .7rem; margin-bottom: 17px; }
+      .btn { width: 100%; min-height: 54px; }
+      .device-stage { min-height: 275px; margin-top: 3px; }
+      .laptop { width: 94%; }
+      .laptop-screen { border-width: 6px; border-bottom-width: 10px; padding: 7px; }
+      .laptop-base { height: 10px; }
+      .phone { width: 91px; right: 0; bottom: -2px; padding: 5px; border-width: 4px; border-radius: 19px; }
+      .phone-screen { min-height: 158px; border-radius: 12px; padding: 32px 7px 8px; }
+      .phone-screen b { font-size: 12px; }
+      .phone-screen small { font-size: 6px; }
+      .phone-screen span { font-size: 6px; margin-top: 9px; }
+      .screen-nav { inset: 8px 10px auto; font-size: 6px; }
+      .screen-content strong { font-size: clamp(15px, 5vw, 23px); }
+      .screen-content em, .screen-content small { font-size: 6px; }
+      .screen-pill { width: 65px; font-size: 6px; margin-top: 9px; }
+      .problem-list, .feature-grid, .portfolio-grid, .details-grid { grid-template-columns: 1fr; }
+      .problem-grid { gap: 24px; }
+      .problem-card { padding: 22px; }
+      .problem-list { gap: 15px; }
+      .feature-grid, .portfolio-grid { gap: 15px; }
+      .feature-card { padding: 24px; }
+      .portfolio-image { height: 220px; }
+      .pricing-wrap { padding-bottom: 72px; }
+      .pricing { grid-template-columns: 1fr; gap: 24px; padding: 30px 24px; border-radius: 22px; }
+      .price-box { min-width: 0; padding: 22px 0 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.25); }
+      .new-price { font-size: clamp(2.7rem, 13vw, 3.8rem); }
+      .details-grid { gap: 48px; }
+      .details h2 { font-size: 1.75rem; }
+      .closing { padding: 65px 0; }
+      .footer-main { align-items: flex-start; flex-direction: column; }
+      .footer-links { gap: 14px 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#beranda" aria-label="ElevatePage beranda">
+        <span class="brand-mark">E</span><span>ElevatePage</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#beranda">Beranda</a>
+        <a href="#keunggulan">Keunggulan</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <span class="nav-note">Digital presence, elevated.</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-tag"><span></span> Jasa Pembuatan Landing Page</div>
+          <h1>ElevatePage — Solusi Landing Page Profesional untuk Bisnis Anda.</h1>
+          <p>Punya bisnis tapi belum memiliki landing page profesional? Tampilkan bisnis Anda dengan lebih meyakinkan, bangun kepercayaan pelanggan, dan permudah mereka mengenal produk atau layanan Anda.</p>
+          <a class="btn" href="https://wa.me/6285809934859?text=Halo%20Kak%2C%20saya%20tertarik%20menggunakan%20jasa%20pembuatan%20landing%20page%20dari%20ElevatePage.%0A%0ASaya%20ingin%20mengetahui%20lebih%20lanjut%20mengenai%20layanan%20dan%20promo%20launching%20Rp75.000.%0A%0ABoleh%20minta%20informasi%20mengenai%20proses%20pemesanan%20dan%20pengerjaannya%3F%0A%0ATerima%20kasih." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.12 0C5.57 0 .23 5.33.23 11.88c0 2.1.55 4.15 1.6 5.96L.13 24l6.32-1.66a11.9 11.9 0 0 0 5.67 1.44h.01c6.55 0 11.88-5.33 11.89-11.88a11.8 11.8 0 0 0-3.5-8.42ZM12.13 21.75h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.75.98 1-3.65-.24-.38a9.84 9.84 0 0 1-1.51-5.23c0-5.46 4.45-9.9 9.91-9.9a9.84 9.84 0 0 1 7.01 2.9 9.84 9.84 0 0 1 2.9 7.02c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.41c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg>
+            Pesan Sekarang
+            <span aria-hidden="true">→</span>
+          </a>
+          <div class="hero-meta">Promo launching · Harga mulai Rp75.000</div>
+        </div>
+
+        <div class="device-stage" aria-label="Ilustrasi landing page pada laptop dan smartphone">
+          <div class="device-glow"></div>
+          <div class="laptop">
+            <div class="laptop-screen">
+              <div class="screen-content">
+                <div class="screen-nav"><span>ElevatePage</span><span>HOME　 ABOUT　 SERVICES</span></div>
+                <small>Grow your business online</small>
+                <strong>Make Your Brand Stand Out.</strong>
+                <em>Bangun kesan profesional sejak pengunjung pertama datang.</em>
+                <div class="screen-pill">EXPLORE MORE →</div>
+              </div>
+            </div>
+            <div class="laptop-base"></div>
+          </div>
+          <div class="phone">
+            <div class="phone-screen">
+              <b>Grow Your Business.</b>
+              <small>Website yang membantu brand tampil lebih percaya diri.</small>
+              <span>DISCOVER →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem">
+      <div class="container problem-grid">
+        <div>
+          <span class="eyebrow">Tantangan Bisnis</span>
+          <h2>Promosi Tanpa Landing Page Bisa Membuat Calon Pelanggan Bingung.</h2>
+          <p>Informasi produk yang tersebar di berbagai tempat dapat membuat calon pelanggan kesulitan memahami penawaran Anda. Bisnis membutuhkan satu halaman yang menyampaikan informasi secara jelas dan terarah.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-list">
+            <div class="problem-item"><i>!</i><span>Informasi produk dan layanan belum tersusun rapi.</span></div>
+            <div class="problem-item"><i>!</i><span>Calon pelanggan kesulitan menemukan informasi penting.</span></div>
+            <div class="problem-item"><i>!</i><span>Tampilan promosi belum mencerminkan kualitas bisnis.</span></div>
+            <div class="problem-item"><i>!</i><span>Pengunjung belum memiliki alur yang jelas untuk menghubungi Anda.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section solution">
+      <div class="container solution-grid">
+        <div class="solution-image">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85" alt="Ruang kerja modern dengan tampilan profesional" loading="lazy">
+        </div>
+        <div>
+          <span class="eyebrow">Solusi ElevatePage</span>
+          <h2>Satu Halaman untuk Memperkenalkan Bisnis dengan Lebih Baik.</h2>
+          <p>ElevatePage membantu Anda menyajikan informasi bisnis dalam landing page yang modern, terstruktur, dan nyaman diakses. Pengunjung dapat memahami penawaran Anda tanpa harus berpindah-pindah halaman.</p>
+          <div class="solution-points">
+            <div><span class="check">✓</span> Informasi bisnis tersusun lebih jelas</div>
+            <div><span class="check">✓</span> Tampilan disesuaikan dengan identitas brand</div>
+            <div><span class="check">✓</span> Nyaman dibuka melalui berbagai perangkat</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section features" id="keunggulan">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Keunggulan Layanan</span>
+          <h2>Kenapa Memilih ElevatePage?</h2>
+          <p>Landing page dirancang untuk membuat bisnis Anda tampil lebih terarah dan profesional.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">✦</div>
+            <h3>Desain Profesional</h3>
+            <p>Tampilan modern, rapi, dan menarik yang dapat disesuaikan dengan karakter bisnis Anda.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">↗</div>
+            <h3>Responsif di Semua Perangkat</h3>
+            <p>Layout dirancang agar nyaman dilihat melalui smartphone, tablet, maupun komputer.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">◎</div>
+            <h3>Informasi Lebih Terarah</h3>
+            <p>Susunan konten membantu calon pelanggan memahami produk atau layanan dengan lebih mudah.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Portfolio Demo</span>
+          <h2>Contoh Desain Landing Page</h2>
+          <p>Beberapa arah visual untuk kategori bisnis yang berbeda. Desain dapat disesuaikan dengan kebutuhan brand Anda.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85" alt="Model fashion mengenakan pakaian streetwear" loading="lazy">
+              <span class="portfolio-label">FASHION & CLOTHING</span>
+            </div>
+            <div class="portfolio-copy">
+              <h3>Fashion & Clothing</h3>
+              <p>Contoh halaman promosi untuk brand pakaian, koleksi terbaru, dan produk fashion.</p>
+            </div>
+          </article>
+          <article class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=900&q=85" alt="Produk skincare dan perawatan kulit" loading="lazy">
+              <span class="portfolio-label">BEAUTY & SKINCARE</span>
+            </div>
+            <div class="portfolio-copy">
+              <h3>Beauty & Skincare</h3>
+              <p>Contoh halaman produk kecantikan dengan visual bersih dan fokus pada produk.</p>
+            </div>
+          </article>
+          <article class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Rumah modern untuk contoh landing page properti" loading="lazy">
+              <span class="portfolio-label">PROPERTY & BUSINESS</span>
+            </div>
+            <div class="portfolio-copy">
+              <h3>Properti & Bisnis</h3>
+              <p>Contoh halaman untuk memperkenalkan properti, jasa, dan layanan profesional.</p>
+            </div>
+          </article>
+        </div>
+        <p class="demo-note">Catatan: gambar dan tampilan di atas merupakan referensi demo visual, bukan klaim proyek atau testimoni pelanggan.</p>
+      </div>
+    </section>
+
+    <section class="pricing-wrap" id="harga">
+      <div class="container">
+        <div class="pricing">
+          <div>
+            <span class="promo-tag">PROMO SPESIAL LAUNCHING</span>
+            <h2>Mulai Tampilkan Bisnis Anda Lebih Profesional.</h2>
+            <p>Manfaatkan harga perkenalan ElevatePage selama periode launching.</p>
+          </div>
+          <div class="price-box">
+            <div class="old-price">Rp120.000</div>
+            <div class="new-price">Rp75.000</div>
+            <div class="saving">Hemat Rp45.000 dari harga normal</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section details">
+      <div class="container details-grid">
+        <div>
+          <span class="eyebrow">Proses Pemesanan</span>
+          <h2>Mudah dan Praktis.</h2>
+          <div class="steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <div><h3>Hubungi ElevatePage</h3><p>Sampaikan kebutuhan landing page dan jenis bisnis Anda.</p></div>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <div><h3>Konsultasikan Konsep</h3><p>Diskusikan materi, gaya desain, dan informasi yang ingin ditampilkan.</p></div>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <div><h3>Proses Pembuatan</h3><p>Detail pengerjaan dan penyerahan hasil dikonfirmasi saat pemesanan.</p></div>
+            </div>
+          </div>
+        </div>
+        <div id="faq">
+          <span class="eyebrow">FAQ</span>
+          <h2>Pertanyaan yang Sering Diajukan.</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false"><span>Apa itu landing page?</span><span>+</span></button>
+              <div class="faq-answer">Landing page adalah halaman web khusus yang menyajikan informasi produk, jasa, atau penawaran bisnis dalam satu halaman yang terarah.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false"><span>Apakah tampilannya bisa dibuka di HP?</span><span>+</span></button>
+              <div class="faq-answer">Ya. Desain dibuat responsif agar menyesuaikan ukuran layar smartphone, tablet, dan komputer.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false"><span>Apakah harga sudah termasuk domain dan hosting?</span><span>+</span></button>
+              <div class="faq-answer">Cakupan domain, hosting, revisi, dan detail teknis lainnya perlu dikonfirmasi terlebih dahulu sebelum pemesanan agar tidak terjadi kesalahpahaman.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false"><span>Bagaimana cara memesan?</span><span>+</span></button>
+              <div class="faq-answer">Hubungi ElevatePage melalui kontak WhatsApp yang tersedia pada tombol pemesanan di bagian atas halaman.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="container">
+        <span class="eyebrow">Elevate Your Business</span>
+        <h2>Siap Membuat Bisnis Anda Tampil Lebih Profesional?</h2>
+        <p>Mulai dengan landing page yang menyampaikan informasi bisnis secara jelas, rapi, dan menarik.</p>
+        <p class="closing-note">Gunakan tombol Pesan Sekarang di bagian atas halaman untuk menghubungi ElevatePage.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="#beranda"><span class="brand-mark">E</span><span>ElevatePage</span></a>
+          <p>Elevate Your Business, One Page at a Time.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.tiktok.com/@elevatepage.id" target="_blank" rel="noopener noreferrer">TikTok: @elevatepage.id</a>
+          <span>WhatsApp: 085809934859</span>
+        </div>
+      </div>
+      <div class="copyright">© 2026 ElevatePage. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion: satu pertanyaan terbuka pada satu waktu.
+    document.querySelectorAll(".faq-question").forEach((button) => {
+      button.addEventListener("click", () => {
+        const currentItem = button.closest(".faq-item");
+        const wasOpen = currentItem.classList.contains("active");
+
+        document.querySelectorAll(".faq-item").forEach((item) => {
+          item.classList.remove("active");
+          item.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+        });
+
+        if (!wasOpen) {
+          currentItem.classList.add("active");
+          button.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
